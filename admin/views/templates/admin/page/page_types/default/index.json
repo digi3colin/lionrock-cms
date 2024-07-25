@@ -1,12 +1,12 @@
 {
   "sections": {
     "header": {
-      "type": "orm-header",
+      "type": "page-header",
       "settings": {
       }
     },
     "main": {
-      "type": "orm-list",
+      "type": "page-list",
       "settings": {
       }
     }
