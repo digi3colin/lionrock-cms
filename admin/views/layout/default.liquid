@@ -1,22 +1,33 @@
+{% assign cacheId = 1 %}
 <!doctype html>
-<html lang="en">
+<html lang="{{ language }}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+
     <link rel="icon" href="/media/favicon/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="/media/favicon/favicon.ico" type="image/x-icon"/>
     <title>LionRockJS example</title>
 
     <link rel="stylesheet" href="/media/vendors/fontawesome/css/fa.min.css">
-    <link rel="stylesheet" href="/media/css/style.css">
-    <link rel="stylesheet" href="/media/css/site.css" />
-    <link rel="stylesheet" href="/media/css/admin.css" />
-    {% for css in stylesheets %}    <link rel="stylesheet" href="/media/css/{{ css }}" />
+    <link rel="stylesheet" href="/media/css/style.css?r={{ cacheId }}">
+    <link rel="stylesheet" href="/media/css/site.css?r={{ cacheId }}" />
+    <link rel="stylesheet" href="/media/css/admin.css?r={{ cacheId }}" />
+    {% for css in stylesheets %}    <link rel="stylesheet" href="/media/css/{{ css }}?r={{ cacheId }}" />
     {% endfor %}
 
-    <script type="application/javascript" src="/media/js/site.js" ></script>
-    {% for script in scripts %}    <script type="application/javascript" src="/media/js/{{ script }}" ></script>
+    <script type="application/javascript" src="/media/js/site.js?r={{ cacheId }}" ></script>
+    <script type="application/javascript" src="/media/js/lib/cookie-consent.js?r={{ cacheId }}"></script>
+
+    {% for script in scripts %}    <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" ></script>
+    {% endfor %}
+
+    {% for script in external_scripts %}    <script type="application/javascript" src="{{ script }}" async></script>
+    {% endfor %}
+
+    {% for script in defer_scripts %}    <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" defer></script>
     {% endfor %}
 </head>
 <body class="{{ controller }} {{ controller }}-{{ action }}">
