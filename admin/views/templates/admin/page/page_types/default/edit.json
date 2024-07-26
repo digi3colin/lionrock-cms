@@ -3,7 +3,27 @@
     "breadcrumb": {
       "type": "breadcrumb",
       "settings": {
-      }
+        "text": "{{ item.title }}"
+      },
+      "blocks": {
+        "link1": {
+          "type": "link",
+          "settings": {
+              "text": "Home",
+              "url": "/"
+          }
+        },
+        "link2": {
+          "type": "link",
+          "settings": {
+            "text": "Page Types",
+            "url": "/admin/contents/list/{{ slug }}"
+          }
+        }},
+      "block_order": [
+        "link1",
+        "link2"
+      ]
     },
     "main": {
       "type": "page-edit",
