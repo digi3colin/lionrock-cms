@@ -34,11 +34,17 @@
       "type": "page/edit/main",
       "settings": {
       }
+    },
+    "footer": {
+      "type": "page/edit/footer",
+      "settings": {
+      }
     }
   },
   "order": [
     "breadcrumb",
     "header",
-    "main"
+    "main",
+    "footer"
   ]
 }

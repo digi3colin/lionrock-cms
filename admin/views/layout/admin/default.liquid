@@ -22,9 +22,10 @@
     {% for css in stylesheets %}    <link rel="stylesheet" href="/media/css/{{ css }}?r={{ cacheId }}" media="print" onload="this.media='all'"/>
     {% endfor %}
 
-    <script type="application/javascript" src="/media/js/lib/vh.js"></script>
+    <script type="application/javascript" src="/media/vendors/sortablejs/Sortable.min.js"></script>
+<!--    <script type="application/javascript" src="/media/js/lib/vh.js"></script>
     <script type="application/javascript" src="/media/js/site.js?r={{ cacheId }}" ></script>
-    <script type="application/javascript" src="/media/js/lib/cookie-consent.js?r={{ cacheId }}"></script>
+    <script type="application/javascript" src="/media/js/lib/cookie-consent.js?r={{ cacheId }}"></script>-->
     <script type="application/javascript" src="/media/js/admin.js?r={{ cacheId }}"></script>
 
     {% for script in scripts %}    <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" ></script>
