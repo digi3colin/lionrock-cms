@@ -1,5 +1,5 @@
-import HelperPage from "../../../classes/helper/Page.mjs";
-import MediaPort from "../../../classes/MediaPort";
+import HelperPage from "../helper/Page.mjs";
+import MediaPort from "../helper/MediaPort.mjs";
 
 HelperPage.enableAutoSave();
 //HelperPage.enablePointers();
@@ -19,13 +19,3 @@ MediaPort.enableUpload(uploadURL[window.location.hostname] || '/admin/upload', {
   dir : 'cms',
   previewUrl : window.location.origin + '/'
 });
-
-tinymce.init({
-  selector: 'textarea',
-  menubar: '',
-  branding: false,
-  width: '100%',
-  plugins: 'code',
-  toolbar: 'undo redo bold italic removeformat code',
-  paste_as_text: true
-}).then();

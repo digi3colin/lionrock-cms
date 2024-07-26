@@ -11,9 +11,11 @@
     <link rel="shortcut icon" href="/media/favicon/favicon.ico" type="image/x-icon"/>
     <title>LionRockJS Admin</title>
 
-    <script src="https://kit.fontawesome.com/24b15eca65.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/media/css/style.css?r={{ cacheId }}" media="print" onload="this.media='all'"/>
-    <link rel="stylesheet" href="/media/css/site.css?r={{ cacheId }}" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" />
+    <link rel="stylesheet" href="/media/css/style.css?r={{ cacheId }}"/>
+    <link rel="stylesheet" href="/media/css/site.css?r={{ cacheId }}"/>
+
+
     <!--
     <link rel="stylesheet" href="/media/css/admin.css?r={{ cacheId }}" media="print" onload="this.media='all'"/>
     <link rel="stylesheet" href="/media/css/admin/pages.css?r={{ cacheId }}" media="print" onload="this.media='all'" />
@@ -22,19 +24,33 @@
     {% for css in stylesheets %}    <link rel="stylesheet" href="/media/css/{{ css }}?r={{ cacheId }}" media="print" onload="this.media='all'"/>
     {% endfor %}
 
+    <script src="https://kit.fontawesome.com/24b15eca65.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+
     <script type="application/javascript" src="/media/vendors/sortablejs/Sortable.min.js"></script>
 <!--    <script type="application/javascript" src="/media/js/lib/vh.js"></script>
     <script type="application/javascript" src="/media/js/site.js?r={{ cacheId }}" ></script>
     <script type="application/javascript" src="/media/js/lib/cookie-consent.js?r={{ cacheId }}"></script>-->
     <script type="application/javascript" src="/media/js/admin.js?r={{ cacheId }}"></script>
 
-    {% for script in scripts %}    <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" ></script>
+    {% for script in scripts %}
+        {% if script contains '.mjs' %}
+            <script type="module" src="/media/js/{{ script }}?r={{ cacheId }}"></script>
+        {% else %}
+            <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" ></script>
+        {% endif %}
     {% endfor %}
 
-    {% for script in external_scripts %}    <script type="application/javascript" src="{{ script }}" async></script>
+    {% for script in external_scripts %}<script type="application/javascript" src="{{ script }}" async></script>
     {% endfor %}
 
-    {% for script in defer_scripts %}    <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" defer></script>
+    {% for script in defer_scripts %}
+        {% if script contains '.mjs' %}
+            <script type="module" src="/media/js/{{ script }}?r={{ cacheId }}" defer></script>
+        {% else %}
+            <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" defer></script>
+        {% endif %}
     {% endfor %}
 </head>
 <body class="{{ controller }} {{ controller }}-{{ action }} role-{{ user_role }} h-full">

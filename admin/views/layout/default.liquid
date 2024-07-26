@@ -21,13 +21,23 @@
     <script type="application/javascript" src="/media/js/site.js?r={{ cacheId }}" ></script>
     <script type="application/javascript" src="/media/js/lib/cookie-consent.js?r={{ cacheId }}"></script>
 
-    {% for script in scripts %}    <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" ></script>
+    {% for script in scripts %}
+        {% if script contains '.mjs' %}
+            <script type="module" src="/media/js/{{ script }}?r={{ cacheId }}"></script>
+        {% else %}
+            <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" ></script>
+        {% endif %}
     {% endfor %}
 
-    {% for script in external_scripts %}    <script type="application/javascript" src="{{ script }}" async></script>
+    {% for script in external_scripts %}<script type="application/javascript" src="{{ script }}" async></script>
     {% endfor %}
 
-    {% for script in defer_scripts %}    <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" defer></script>
+    {% for script in defer_scripts %}
+        {% if script contains '.mjs' %}
+            <script type="module" src="/media/js/{{ script }}?r={{ cacheId }}" defer></script>
+        {% else %}
+            <script type="application/javascript" src="/media/js/{{ script }}?r={{ cacheId }}" defer></script>
+        {% endif %}
     {% endfor %}
 </head>
 <body class="{{ controller }} {{ controller }}-{{ action }}">

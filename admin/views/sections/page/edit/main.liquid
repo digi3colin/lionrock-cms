@@ -1,7 +1,7 @@
-<div class="container mx-auto">
-  {% assign block_types = "default" %}
-  {% assign page_type_name = "Default" %}
+{% assign block_types = "default" %}
+{% assign page_type_name = "Default" %}
 
+<div class="container mx-auto">
   <form id="main-form" action="/admin/pages/{{ item.id }}?language={{ language |  default: "en" }}" method="post">
     <div class="flex flex-row">
       <div class="w-9/12 px-4">
