@@ -2,6 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/* heading */
+.container h1.text-xl{
+    font-size: 4.625rem;
+    margin-bottom: 1rem;
+}
+
+.container h1{
+    font-size: 3.125rem;
+    margin-bottom: 1rem;
+}
+
+.container h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container h3{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.container h4{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.container h5{
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.container h5.intro{
+    @apply font-sans;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5{
+    @apply font-serif
+}
+
+h6 {
+    @apply font-sans
+}
+
+/* button */
+
 .button-primary{
     @apply inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
 }
@@ -13,6 +60,8 @@
 .button-danger{
     @apply inline-flex items-center rounded-md bg-red-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
 }
+
+/* table */
 
 .table-primary{
     @apply min-w-full divide-y divide-gray-300;
@@ -36,4 +85,10 @@
 
 .table-primary tbody tr{
     @apply text-gray-500;
+}
+
+/* input */
+
+input[type="text"].inline-edit{
+    @apply inline bg-transparent border-0 focus:border-0 p-0;
 }
