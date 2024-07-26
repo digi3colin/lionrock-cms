@@ -3,7 +3,6 @@
   {% assign page_type_name = "Default" %}
 
   <form id="main-form" action="/admin/pages/{{ item.id }}?language={{ language |  default: "en" }}" method="post">
-    {% render "page/edit/header", slug : page_type, label: page_type_name, item: item, published: published, sync: sync %}
     <div class="flex flex-row">
       <div class="w-9/12">
         <div>

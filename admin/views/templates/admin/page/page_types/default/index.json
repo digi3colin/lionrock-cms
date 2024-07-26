@@ -1,12 +1,12 @@
 {
   "sections": {
     "header": {
-      "type": "page-header",
+      "type": "page/list/header",
       "settings": {
       }
     },
     "main": {
-      "type": "page-list",
+      "type": "page/list/main",
       "settings": {
       }
     }

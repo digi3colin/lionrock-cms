@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button-primary{
+    @apply inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+}
+
+.button-secondary{
+    @apply inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50;
+}
+
+.table-primary{
+    @apply min-w-full divide-y divide-gray-300;
+}
+
+.table-primary th{
+    @apply px-3 py-3.5;
+}
+
+.table-primary td{
+    @apply whitespace-nowrap px-3 py-4;
+}
+
+.table-primary tbody{
+    @apply divide-y divide-gray-200;
+}
+
+.table-primary thead tr{
+    @apply text-left font-semibold text-gray-900;
+}
+
+.table-primary tbody tr{
+    @apply text-gray-500;
+}

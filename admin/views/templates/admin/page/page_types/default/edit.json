@@ -25,14 +25,20 @@
         "link2"
       ]
     },
+    "header": {
+      "type": "page/edit/header",
+      "settings": {
+      }
+    },
     "main": {
-      "type": "page-edit",
+      "type": "page/edit/main",
       "settings": {
       }
     }
   },
   "order": [
     "breadcrumb",
+    "header",
     "main"
   ]
 }
