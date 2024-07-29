@@ -878,6 +878,10 @@ select {
   top: -0.5rem;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -1874,6 +1878,20 @@ input[type="text"].inline-edit:focus {
   border-width: 0px;
 }
 
+.rich-text-editor ol > li {
+  margin-inline-start: 1rem;
+  list-style-type: decimal;
+}
+
+.rich-text-editor ul > li {
+  margin-inline-start: 1rem;
+  list-style-type: disc;
+}
+
+.rich-text-editor p {
+  margin-bottom: 1rem;
+}
+
 .placeholder\:text-gray-400::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -1977,6 +1995,10 @@ input[type="text"].inline-edit:focus {
 
 .peer:checked ~ .peer-checked\:block {
   display: block;
+}
+
+.peer:checked ~ .peer-checked\:hidden {
+  display: none;
 }
 
 @media (min-width: 414px) {

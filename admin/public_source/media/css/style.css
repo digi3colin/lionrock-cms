@@ -92,3 +92,15 @@ h6 {
 input[type="text"].inline-edit{
     @apply inline bg-transparent border-0 focus:border-0 p-0;
 }
+
+.rich-text-editor ol > li{
+    @apply list-decimal ms-4;
+}
+
+.rich-text-editor ul > li{
+    @apply list-disc ms-4;
+}
+
+.rich-text-editor p{
+    @apply mb-4;
+}

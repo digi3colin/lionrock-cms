@@ -11,10 +11,8 @@
     <link rel="shortcut icon" href="/media/favicon/favicon.ico" type="image/x-icon"/>
     <title>LionRockJS Admin</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" />
     <link rel="stylesheet" href="/media/css/style.css?r={{ cacheId }}"/>
     <link rel="stylesheet" href="/media/css/site.css?r={{ cacheId }}"/>
-
 
     <!--
     <link rel="stylesheet" href="/media/css/admin.css?r={{ cacheId }}" media="print" onload="this.media='all'"/>
@@ -25,8 +23,13 @@
     {% endfor %}
 
     <script src="https://kit.fontawesome.com/24b15eca65.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+
     <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 
     <script type="application/javascript" src="/media/vendors/sortablejs/Sortable.min.js"></script>
 <!--    <script type="application/javascript" src="/media/js/lib/vh.js"></script>
