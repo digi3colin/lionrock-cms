@@ -21,8 +21,8 @@
     "@lionrockjs/mod-auth": "^0.0.5",
     "@lionrockjs/adapter-auth-password": "^0.0.3",
     "@lionrockjs/mixin-orm": "^0.0.4",
-    "@lionrockjs/mod-admin": "^0.0.11",
-    "@lionrockjs/mod-admin-cms": "^0.0.3",
+    "@lionrockjs/mod-admin": "^0.0.12",
+    "@lionrockjs/mod-admin-cms": "^0.0.4",
     "dotenv": "^16.4.5",
     "pluralize": "^8.0.0"
   },
